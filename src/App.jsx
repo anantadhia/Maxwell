@@ -34,7 +34,9 @@ function App({ ready }) {
   }, [audio]);
   return (
     <div className=" h-screen">
-      <h1 className="text-2xl font sm:text-9xl text-center">Maxwell</h1>
+      <h1 className="text-2xl font sm:text-9xl text-center text-white">
+        Maxwell
+      </h1>
       <div className="justify-center flex">
         <button
           className="bg-slate-400 active:bg-blue-600 text-white m-0 rounded-xl w-screen h-screen"
