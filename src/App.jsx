@@ -1,9 +1,10 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense } from "react";
 
 import "./App.css";
 import { Maxwell } from "./assets/Maxwell_dance";
 import { Canvas } from "@react-three/fiber";
 import {
+  AdaptiveDpr,
   OrbitControls,
   PositionalAudio,
   PresentationControls,
@@ -49,8 +50,11 @@ function App({ ready }) {
               <ambientLight />
               <OrbitControls autoRotate={true} autoRotateSpeed={20} />
               <Maxwell ready={ready} />
+              <AdaptiveDpr pixelated />
             </PresentationControls>
-            <Doggy position={[1, -1, -5]} />
+            <Suspense>
+              <Doggy position={[1, -1, -5]} />
+            </Suspense>
           </Canvas>
         </button>
       </div>
