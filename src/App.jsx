@@ -8,6 +8,7 @@ import {
   PositionalAudio,
   PresentationControls,
 } from "@react-three/drei";
+import { Doggy } from "./assets/Doggy";
 
 function App({ ready }) {
   const [audio] = useState(new Audio("/maxwell.mp3"));
@@ -36,7 +37,7 @@ function App({ ready }) {
       <h1 className="text-2xl font sm:text-9xl text-center">Maxwell</h1>
       <div className="justify-center flex">
         <button
-          className="bg-slate-600 active:bg-blue-600 text-white rounded-xl  w-screen h-screen"
+          className="bg-slate-400 active:bg-blue-600 text-white m-0 rounded-xl w-screen h-screen"
           onClick={handlePlayPause}
         >
           {isPlaying ? "Pause" : "Play"}
@@ -47,6 +48,7 @@ function App({ ready }) {
               <OrbitControls autoRotate={true} autoRotateSpeed={20} />
               <Maxwell ready={ready} />
             </PresentationControls>
+            <Doggy position={[1, -1, -5]} />
           </Canvas>
         </button>
       </div>
