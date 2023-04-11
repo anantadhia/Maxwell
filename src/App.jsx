@@ -32,20 +32,24 @@ function App({ ready }) {
     };
   }, [audio]);
   return (
-    <div className="w-full h-screen">
-      <div>
-        <h1>Maxwell</h1>
-        <button onClick={handlePlayPause}>
+    <div className=" h-screen">
+      <h1 className="text-2xl font sm:text-9xl text-center">Maxwell</h1>
+      <div className="justify-center flex">
+        <button
+          className="bg-slate-600 active:bg-blue-600 text-white rounded-xl  w-screen h-screen"
+          onClick={handlePlayPause}
+        >
           {isPlaying ? "Pause" : "Play"}
+
+          <Canvas>
+            <PresentationControls zoom={2}>
+              <ambientLight />
+              <OrbitControls autoRotate={true} autoRotateSpeed={20} />
+              <Maxwell ready={ready} />
+            </PresentationControls>
+          </Canvas>
         </button>
       </div>
-      <Canvas>
-        <PresentationControls zoom={2}>
-          <ambientLight />
-          <OrbitControls autoRotate={true} autoRotateSpeed={20} />
-          <Maxwell ready={ready} />
-        </PresentationControls>
-      </Canvas>
     </div>
   );
 }
